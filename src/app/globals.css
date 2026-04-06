@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #030712;
+  --color-navy-900: #050B18;
+  --color-navy-800: #0B1628;
+  --color-navy-700: #111D35;
+  --color-navy-600: #1A2744;
+
+  --color-slate-400: #94A3B8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F1F5F9;
+
+  /* Coastal accent — used across buttons, links, and highlights */
+  --color-sea: #2dd4bf;
+  --color-sea-light: #5eead4;
+  --color-sea-dim: #0d9488;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --animate-shimmer: shimmer 2.5s ease-in-out infinite;
+  --animate-speed-line: speed-line 3s ease-in-out infinite;
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes speed-line {
+    0% { transform: translateX(-100%); opacity: 0; }
+    20% { opacity: 0.6; }
+    100% { transform: translateX(200%); opacity: 0; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-navy-950);
+  color: var(--color-slate-200);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-sea) 30%, transparent);
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-sea-light) 50%, var(--color-sea) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-sea), transparent);
+  }
+
+  .card-surface {
+    background: linear-gradient(145deg, color-mix(in srgb, var(--color-navy-800) 80%, transparent), color-mix(in srgb, var(--color-navy-700) 40%, transparent));
+    border: 1px solid color-mix(in srgb, white 6%, transparent);
+    backdrop-filter: blur(20px);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-sea) 0%, var(--color-sea-dim) 100%);
+    color: #042f2e;
+    font-weight: 600;
+    transition: all 200ms ease;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-sea) 25%, transparent);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-sea) 40%, transparent);
+    filter: brightness(1.08);
+  }
+
+  .btn-secondary {
+    border: 1px solid color-mix(in srgb, var(--color-sea) 40%, transparent);
+    color: var(--color-sea-light);
+    font-weight: 500;
+    transition: all 200ms ease;
+  }
+
+  .btn-secondary:hover {
+    background: color-mix(in srgb, var(--color-sea) 10%, transparent);
+    border-color: var(--color-sea);
+  }
+}
