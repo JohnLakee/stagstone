@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-/** Solid stag mark — Game Icons stag-head (game-icons.net, CC BY 3.0) */
+/** Official stag silhouette from brand artwork (white on transparent PNG) */
 export function StagMark({ className = "" }: { className?: string }) {
   return (
     <Image
-      src="/stag-icon.svg"
+      src="/stag-icon.png"
       alt=""
-      width={512}
-      height={512}
+      width={250}
+      height={62}
       priority
-      className={`h-auto w-auto max-h-[4rem] object-contain brightness-0 invert drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)] sm:max-h-[4.75rem] md:max-h-[5.25rem] ${className}`}
+      className={`h-auto max-h-[5rem] w-auto max-w-[min(90vw,20rem)] object-contain object-center drop-shadow-[0_2px_20px_rgba(0,0,0,0.75)] sm:max-h-[5.5rem] md:max-h-[6rem] ${className}`}
       aria-hidden
     />
   );
