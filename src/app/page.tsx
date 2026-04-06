@@ -13,7 +13,7 @@ export default function Home() {
           fetchPriority="high"
           quality={92}
           sizes="100vw"
-          className="object-cover object-center select-none"
+          className="object-contain object-center select-none"
           draggable={false}
         />
       </div>
