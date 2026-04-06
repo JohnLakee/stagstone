@@ -28,7 +28,7 @@ export default function Home() {
           aria-hidden
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center">
-          <StagMark className="mb-5 h-14 w-12 shrink-0 text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)] sm:mb-6 sm:h-16 sm:w-14 md:h-[4.5rem] md:w-[4rem]" />
+          <StagMark className="mb-5 shrink-0 sm:mb-6" />
           <h1
             className={`${playfair.className} max-w-[min(100%,20ch)] text-[clamp(1.65rem,6.5vw,3.5rem)] font-semibold leading-tight tracking-[0.02em] text-white drop-shadow-[0_2px_28px_rgba(0,0,0,0.9)]`}
           >
