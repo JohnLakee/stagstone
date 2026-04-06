@@ -36,16 +36,35 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-navy-950);
+  background-color: #000000;
   color: var(--color-slate-200);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Full-bleed hero: svh on phones (stable with browser chrome), dvh on larger screens */
+.hero-fullscreen {
+  height: 100svh;
+  min-height: -webkit-fill-available;
+}
+
+@media (min-width: 768px) {
+  .hero-fullscreen {
+    height: 100dvh;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
