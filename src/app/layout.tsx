@@ -11,7 +11,8 @@ const inter = Inter({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  viewportFit: "cover",
+  // `cover` can cause odd layout on some Android WebViews; edge-to-edge still works without it.
+  viewportFit: "auto",
 };
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} m-0 min-h-[100dvh] overflow-x-hidden overflow-y-hidden antialiased`}
+        className={`${inter.variable} m-0 min-h-[100dvh] overflow-x-clip overflow-y-hidden antialiased`}
       >
         {children}
       </body>
