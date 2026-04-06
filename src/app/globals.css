@@ -48,19 +48,15 @@ body {
   color: var(--color-slate-200);
   font-size: 16px;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   min-height: 100%;
   min-height: 100dvh;
   overflow-x: clip;
   overflow-y: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/*
-  Full-bleed hero: fixed layer avoids iOS Safari height collapse with next/image `fill`.
-  Stack: legacy vh → -webkit-fill-available (iOS) → svh (stable mobile) → dvh (dynamic).
-*/
 .hero-viewport {
   position: fixed;
   top: 0;

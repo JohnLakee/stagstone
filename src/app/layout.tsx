@@ -11,7 +11,6 @@ const inter = Inter({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  // `cover` can cause odd layout on some Android WebViews; edge-to-edge still works without it.
   viewportFit: "auto",
 };
 
@@ -23,12 +22,7 @@ export const metadata: Metadata = {
     title: "Stag & Stone",
     description: "Regal retreat. Rugged beauty.",
     type: "website",
-    images: [
-      {
-        url: "/stagstone-hero-bg.png",
-        alt: "Misty forest canyon valley",
-      },
-    ],
+    images: [{ url: "/stagstone-hero-bg.png", alt: "Misty forest canyon valley" }],
   },
 };
 
