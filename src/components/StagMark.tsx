@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-/** Official stag silhouette — full head + antlers (brand art has a dark gap between antlers, so the mark must include the full vertical span ~234–367px, not stop at the wordmark row). */
+/** Official stag mark: full head + antlers (source art has a dark gap between antlers, so extraction uses the full vertical span). */
 export function StagMark({ className = "" }: { className?: string }) {
   return (
     <Image
