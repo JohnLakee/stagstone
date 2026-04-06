@@ -1,21 +1,43 @@
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+import { StagMark } from "@/components/StagMark";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+});
 
 export default function Home() {
   return (
     <main className="hero-viewport">
-      {/* Explicit relative box so `fill` + % heights resolve on mobile WebKit */}
       <div className="relative h-full min-h-full w-full">
         <Image
-          src="/stag-stone.png"
-          alt="Stag & Stone — Regal retreat. Rugged beauty."
+          src="/stagstone-hero-bg.png"
+          alt="Misty forest canyon valley at dawn"
           fill
           priority
           fetchPriority="high"
-          quality={92}
+          quality={90}
           sizes="100vw"
-          className="object-contain object-center select-none"
+          className="object-cover object-center select-none"
           draggable={false}
         />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40"
+          aria-hidden
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center">
+          <StagMark className="mb-5 h-14 w-12 shrink-0 text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)] sm:mb-6 sm:h-16 sm:w-14 md:h-[4.5rem] md:w-[4rem]" />
+          <h1
+            className={`${playfair.className} max-w-[min(100%,20ch)] text-[clamp(1.65rem,6.5vw,3.5rem)] font-semibold leading-tight tracking-[0.02em] text-white drop-shadow-[0_2px_28px_rgba(0,0,0,0.9)]`}
+          >
+            STAG &amp; STONE
+          </h1>
+          <p className="mt-4 max-w-[min(100%,24rem)] font-sans text-[0.625rem] font-medium uppercase leading-relaxed tracking-[0.32em] text-white/95 sm:text-xs sm:tracking-[0.38em] md:mt-5 md:text-sm md:tracking-[0.42em]">
+            Regal retreat. Rugged beauty.
+          </p>
+        </div>
       </div>
     </main>
   );

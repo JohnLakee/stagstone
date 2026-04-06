@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     title: "Stag & Stone",
     description: "Regal retreat. Rugged beauty.",
     type: "website",
+    images: [
+      {
+        url: "/stagstone-hero-bg.png",
+        alt: "Misty forest canyon valley",
+      },
+    ],
   },
 };
 
