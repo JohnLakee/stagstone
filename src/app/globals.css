@@ -79,6 +79,27 @@ body {
   }
 }
 
+/* Slow pan/zoom on static hero when video is unavailable */
+.hero-kenburns {
+  animation: hero-kenburns 52s ease-in-out infinite alternate;
+}
+
+@keyframes hero-kenburns {
+  0% {
+    transform: translate(-1.2%, -0.8%) scale(1.05);
+  }
+  100% {
+    transform: translate(1.4%, 1.1%) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns {
+    animation: none;
+    transform: none;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
   line-height: 1.15;

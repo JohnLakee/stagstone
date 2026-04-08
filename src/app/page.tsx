@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
+import { HeroBackground } from "@/components/HeroBackground";
 import { StagMark } from "@/components/StagMark";
 
 const playfair = Playfair_Display({
@@ -12,22 +12,12 @@ export default function Home() {
   return (
     <main className="hero-viewport">
       <div className="relative h-full min-h-full w-full">
-        <Image
-          src="/stagstone-hero-bg.png"
-          alt="Misty forest canyon valley at dawn"
-          fill
-          priority
-          fetchPriority="high"
-          quality={90}
-          sizes="100vw"
-          className="object-cover object-center select-none"
-          draggable={false}
-        />
+        <HeroBackground />
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-black/10 to-black/40"
           aria-hidden
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center">
+        <div className="absolute inset-0 z-[1] flex flex-col items-center justify-center px-5 text-center">
           <StagMark className="mb-5 shrink-0 sm:mb-6" />
           <h1
             className={`${playfair.className} max-w-[min(100%,20ch)] text-[clamp(1.65rem,6.5vw,3.5rem)] font-semibold leading-tight tracking-[0.02em] text-white drop-shadow-[0_2px_28px_rgba(0,0,0,0.9)]`}
