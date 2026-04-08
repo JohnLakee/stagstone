@@ -6,10 +6,10 @@ export function StagMark({ className = "" }: { className?: string }) {
     <Image
       src="/stag-icon.png"
       alt=""
-      width={262}
-      height={145}
+      width={258}
+      height={129}
       priority
-      className={`h-auto max-h-[6.5rem] w-auto max-w-[min(92vw,19rem)] object-contain object-center drop-shadow-[0_2px_20px_rgba(0,0,0,0.75)] sm:max-h-[7.25rem] md:max-h-[8rem] ${className}`}
+      className={`h-auto w-auto max-h-[8rem] max-w-[min(92vw,20rem)] object-contain object-center drop-shadow-[0_2px_20px_rgba(0,0,0,0.75)] sm:max-h-[9rem] ${className}`}
       aria-hidden
     />
   );
