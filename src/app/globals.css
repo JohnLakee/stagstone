@@ -79,24 +79,17 @@ body {
   }
 }
 
-/* Slow pan/zoom on static hero when video is unavailable */
-.hero-kenburns {
-  animation: hero-kenburns 52s ease-in-out infinite alternate;
+/* Hero photo: full bleed; short landscape viewports use contain so the centered art is not top/bottom cropped */
+.hero-bg-photo {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes hero-kenburns {
-  0% {
-    transform: translate(-1.2%, -0.8%) scale(1.05);
-  }
-  100% {
-    transform: translate(1.4%, 1.1%) scale(1.1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-kenburns {
-    animation: none;
-    transform: none;
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-bg-photo {
+    object-fit: contain;
   }
 }
 

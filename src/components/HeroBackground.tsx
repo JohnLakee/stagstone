@@ -4,38 +4,36 @@ import Image from "next/image";
 import { useState } from "react";
 
 /**
- * Looping background video when `public/hero-bg.mp4` (and optionally `hero-bg.webm`) exists.
- * Until the video can play — or if it is missing — a slow Ken Burns pan/zoom runs on the static hero PNG.
+ * Full-bleed hero: `public/hero-stagstone.png` (1024×686) is the design comp with branding baked in.
+ * Optional `public/hero-bg.webm` / `hero-bg.mp4` replaces the still when present.
+ * No Ken Burns / oversized wrapper — those cropped the top of the artwork on some viewports.
  */
 export function HeroBackground() {
   const [videoReady, setVideoReady] = useState(false);
   const [videoGone, setVideoGone] = useState(false);
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      {/* Motion fallback / underlay (always mounted; hidden when video is playing) */}
+    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-black">
       <div
         className={`absolute inset-0 ${videoReady && !videoGone ? "opacity-0" : "opacity-100"}`}
         aria-hidden
       >
-        <div className="hero-kenburns absolute left-1/2 top-1/2 h-[118%] w-[118%] -translate-x-1/2 -translate-y-1/2">
-          <Image
-            src="/stagstone-hero-bg.png"
-            alt=""
-            fill
-            priority
-            fetchPriority="high"
-            quality={88}
-            sizes="100vw"
-            className="object-cover object-center select-none"
-            draggable={false}
-          />
-        </div>
+        <Image
+          src="/hero-stagstone.png"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          quality={92}
+          sizes="100vw"
+          className="hero-bg-photo select-none"
+          draggable={false}
+        />
       </div>
 
       {!videoGone && (
         <video
-          className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${
+          className={`hero-bg-photo absolute inset-0 h-full w-full transition-opacity duration-700 ${
             videoReady ? "opacity-100" : "opacity-0"
           }`}
           autoPlay
@@ -43,7 +41,7 @@ export function HeroBackground() {
           loop
           playsInline
           preload="auto"
-          poster="/stagstone-hero-bg.png"
+          poster="/hero-stagstone.png"
           onCanPlay={() => setVideoReady(true)}
           onPlaying={() => setVideoReady(true)}
           onError={() => setVideoGone(true)}
